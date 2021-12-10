@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "watch": "nodemon --watch \"./webpack.*\" --exec \"yarn start\"",
-    "start": "wp --mode development --config webpack/webpack.config.js",
-    "build": "wp --mode production --config webpack/webpack.config.js",
+    "start": "wp --mode development --config webpack/webpack.development.js",
+    "build": "wp --mode production --config webpack/webpack.production.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
