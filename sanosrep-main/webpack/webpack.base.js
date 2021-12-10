@@ -4,7 +4,7 @@ const parts = require("./webpack.parts");
 
 module.exports = merge([
     {
-        entry: ["./src"]
+        entry: ["./src"],
     },
     parts.page({ title: "Demo" }),
     parts.loadCSS(),

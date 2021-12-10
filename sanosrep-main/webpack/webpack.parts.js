@@ -1,7 +1,5 @@
 const { WebpackPluginServe } = require("webpack-plugin-serve");
-const {
-    MiniHtmlWebpackPlugin,
-} = require("mini-html-webpack-plugin");
+const { MiniHtmlWebpackPlugin } = require("mini-html-webpack-plugin");
 
 exports.devServer = () => ({
     watch: true,
@@ -25,7 +23,7 @@ exports.loadCSS = () => ({
         rules: [
             {
                 test: /\.css$/,
-                use: ["style-loader", "css-loader"]
+                use: ["style-loader", "css-loader"],
                 // style-loader is used to ingest style into the DOM
                 // css-loader allows for @import/url() syntax (only internal resources)
             },
