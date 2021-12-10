@@ -6,20 +6,23 @@ const parts = require("./webpack.parts");
 const WebpackNotifierPlugin = require('webpack-notifier');
 
 const commonConfig = merge([
-    { entry: ["./src"],
-    plugins: [
-        new WebpackNotifierPlugin({title: function (params) {
-            return `Build status is ${params.status} with message ${params.message}`;
-        }})
-    ]},
+    {
+        entry: ["./src"]
+    },
     parts.page({ title: "Demo" }),
-
 ]);
 
 const productionConfig = merge([]);
 
 const developmentConfig = merge([
-    { entry: ["webpack-plugin-serve/client"] },
+    {
+        entry: ["webpack-plugin-serve/client"],
+        plugins: [
+        new WebpackNotifierPlugin({title: function (params) {
+                return `Build status is ${params.status} with message ${params.message}`;
+            }})
+        ]
+    },
     parts.devServer(),
 ]);
 
