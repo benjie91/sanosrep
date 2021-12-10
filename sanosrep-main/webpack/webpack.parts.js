@@ -23,7 +23,12 @@ exports.page = ({ title }) => ({
 exports.loadCSS = () => ({
     module: {
         rules: [
-            { test: /\.css$/, use: ["style-loader", "css-loader"] },
+            {
+                test: /\.css$/,
+                use: ["style-loader", "css-loader"]
+                // style-loader is used to ingest style into the DOM
+                // css-loader allows for @import/url() syntax (only internal resources)
+            },
         ],
     },
 });
