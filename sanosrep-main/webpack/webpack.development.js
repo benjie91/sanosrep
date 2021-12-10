@@ -10,7 +10,7 @@ const developmentConfig = merge([
         entry: ["webpack-plugin-serve/client"],
         plugins: [
             new WebpackNotifierPlugin({
-                title: function (params) {
+                title: (params) => {
                     return `Build status is ${params.status} with message ${params.message}`;
                 },
             }),
