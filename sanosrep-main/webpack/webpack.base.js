@@ -7,4 +7,5 @@ module.exports = merge([
         entry: ["./src"]
     },
     parts.page({ title: "Demo" }),
+    parts.loadCSS(),
 ]);
