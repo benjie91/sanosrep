@@ -2,9 +2,18 @@ const { mode } = require("webpack-nano/argv");
 const { merge } = require("webpack-merge");
 const parts = require("./webpack.parts");
 
+// Plugins
+const WebpackNotifierPlugin = require('webpack-notifier');
+
 const commonConfig = merge([
-    { entry: ["./src"] },
+    { entry: ["./src"],
+    plugins: [
+        new WebpackNotifierPlugin({title: function (params) {
+            return `Build status is ${params.status} with message ${params.message}`;
+        }})
+    ]},
     parts.page({ title: "Demo" }),
+
 ]);
 
 const productionConfig = merge([]);

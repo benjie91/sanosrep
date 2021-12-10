@@ -18,6 +18,7 @@
     "webpack": "^5.65.0",
     "webpack-merge": "^5.8.0",
     "webpack-nano": "^1.1.1",
+    "webpack-notifier": "^1.14.1",
     "webpack-plugin-serve": "^1.5.0"
   }
 }
