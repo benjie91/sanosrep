@@ -5,7 +5,8 @@ const parts = require("./webpack.parts");
 module.exports = merge([
     {
         entry: ["./src"],
+        // output: { clean: true },
     },
     parts.page({ title: "Demo" }),
-    parts.extractCSS(),
+    parts.extractCSS({ loaders: [parts.autoprefix(), parts.tailwind()] }),
 ]);

@@ -51,3 +51,27 @@ exports.extractCSS = ({ options = {}, loaders = [] } = {}) => ({
         }),
     ],
 });
+
+exports.tailwind = () => ({
+    loader: "postcss-loader",
+    options: {
+        postcssOptions: {
+            plugins: [
+                require("tailwindcss")({
+                    content: ["./src/**/*.{html,js}"],
+                    theme: {
+                        extend: {},
+                    },
+                    plugins: [],
+                }),
+            ],
+        },
+    },
+});
+
+exports.autoprefix = () => ({
+    loader: "postcss-loader",
+    options: {
+        postcssOptions: { plugins: [require("autoprefixer")()] },
+    },
+});
